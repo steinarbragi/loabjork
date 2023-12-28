@@ -14,6 +14,12 @@ export default {
       title: 'Texti',
     },
     {
+      name: 'image',
+      type: 'image',
+      title: 'Mynd',
+    },
+
+    {
       name: 'CV',
       type: 'file',
       title: 'CV',
