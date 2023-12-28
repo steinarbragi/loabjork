@@ -31,7 +31,10 @@ const navItems = [
 export default function Navigation() {
   const pathname = usePathname();
   return (
-    <Disclosure as="nav" className="bg-white dark:bg-black shadow">
+    <Disclosure
+      as="nav"
+      className="bg-white/50 fixed right-0 left-0 backdrop-blur dark:bg-black/50 shadow"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
