@@ -42,6 +42,7 @@ export default function Navigation() {
                   {navItems.map(item => (
                     <Link
                       href={item.url}
+                      key={item.text}
                       className={`inline-flex items-center border-b-2 ${
                         pathname === item.url
                           ? 'border-indigo-500 dark:text-gray-50 text-gray-900'
@@ -73,6 +74,7 @@ export default function Navigation() {
               {navItems.map(item => (
                 <Link
                   href={item.url}
+                  key={item.text}
                   className={`block border-l-4 ${
                     pathname === item.url
                       ? 'bg-indigo-50 dark:bg-slate-900 border-indigo-500 text-indigo-700'
