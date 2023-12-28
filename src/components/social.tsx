@@ -3,11 +3,13 @@ import InstagramIcon from '@/icons/instagram';
 import LinkedInIcon from '@/icons/linkedin';
 import Link from 'next/link';
 
-export default function Social() {
+export default function Social({ color }: { color?: string }) {
   return (
     <div
       id="social"
-      className="mx-auto my-10 text-center flex flex-row space-x-6 justify-center"
+      className={`${
+        color && color
+      } mx-auto text-center flex flex-row space-x-6 justify-center`}
     >
       <Link href="https://www.facebook.com/loabb">
         <FacebookIcon />

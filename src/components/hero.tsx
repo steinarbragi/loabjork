@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
-    <div>
-      <h1 className="text-center text-3xl font-bold">Lóa Björk</h1>
+    <div className="w-100">
+      <h1 className="text-center text-6xl font-bold mt-10">Lóa Björk</h1>
     </div>
   );
 }
