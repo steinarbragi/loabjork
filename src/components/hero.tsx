@@ -17,7 +17,7 @@ export default function Hero() {
         <Link href="https://www.instagram.com/loabragadottir">
           <InstagramIcon />
         </Link>
-        <Link href="https://www.linkedin.com/in/%C3%B3l%C3%B6f-bj%C3%B6rk-bragad%C3%B3ttir-ab81a3119/">
+        <Link href="https://www.linkedin.com/in/%C3%B3l%C3%B6f-bj%C3%B6rk-bragad%C3%B3ttir-8baa0426/">
           <LinkedInIcon />
         </Link>
       </div>
