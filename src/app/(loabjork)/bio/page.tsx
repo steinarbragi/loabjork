@@ -1,3 +1,10 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Bio | Lóa Björk',
+  description: 'Lóa Björk Bragadóttir',
+};
+
 export default function Bio() {
   return (
     <main className="flex flex-col items-center justify-between p-24">
