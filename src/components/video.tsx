@@ -1,7 +1,7 @@
 export default function Video() {
   return (
     <>
-      <div className="fixed -z-40 w-full h-full top-0 left-0 bg-gradient-to-t from-black/0 dark:to-slate-900/100 to-white/70" />
+      <div className="fixed -z-40 w-full h-1/2 top-0 left-0 bg-gradient-to-t from-black/0 dark:to-slate-900/100 to-white/70" />
       <div className="fixed -z-50 w-full h-full top-0 left-0">
         <iframe
           width="100%"
