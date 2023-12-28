@@ -33,7 +33,7 @@ export default function Navigation() {
   return (
     <Disclosure
       as="nav"
-      className="bg-white/50 dark:bg-black/60 fixed right-0 left-0 backdrop-blur shadow"
+      className="bg-white/50 dark:bg-black/60 fixed z-50 right-0 left-0 backdrop-blur shadow"
     >
       {({ open }) => (
         <>
