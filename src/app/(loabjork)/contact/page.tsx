@@ -1,4 +1,3 @@
-import ContactForm from '@/components/contactForm';
 import { Metadata } from 'next';
 import {
   BuildingOffice2Icon,
@@ -75,7 +74,7 @@ export default function Contact() {
               </dl>
             </div>
           </div>
-          <ContactForm />
+          {/* <ContactForm />  */}
         </div>
       </div>
     </main>
