@@ -10,16 +10,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
   );
 
   return (
-    <main className="flex flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center justify-between p-24 lg:p-24 max-w-full">
       <Head>
         <title>{project.title}</title>
       </Head>
-      <div className="text-center">
+      <div className="mt-20">
         <h1 className="text-3xl mb-10">{project?.title}</h1>
         <p className="mt-10">{project?.content}</p>
         {project.video && (
           <div
-            className="my-10 w-full flex justify-center"
+            className="my-10 w-full max-w-full flex justify-center"
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: project.video }}
           />
@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 .url()}
               blurDataURL={urlForImage(item).width(20).quality(20).url()}
               alt="Lóa Björk Bragadóttir"
-              className="block w-full"
+              className="block w-full max-w-full"
             />
           ))}
         </div>
