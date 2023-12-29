@@ -4,5 +4,8 @@
         "publications": "Publications",
         "bio": "Bio",
         "contact": "Contact"
+    },
+    "contact": {
+        "contact": "Contact"
     }
 }

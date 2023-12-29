@@ -4,5 +4,8 @@
         "publications": "Útgefið efni",
         "bio": "Um mig",
         "contact": "Hafa samband"
+    },
+    "contact": {
+        "contact": "Hafa samband"
     }
 }

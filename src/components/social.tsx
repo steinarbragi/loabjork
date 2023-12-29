@@ -11,7 +11,7 @@ export default function Social({ color }: { color?: string }) {
       id="social"
       className={`${
         color && color
-      } mx-auto text-center flex flex-row space-x-6 justify-center drop`}
+      } mx-auto text-center flex flex-row space-x-6 justify-center`}
     >
       <Link className={linkClasses} href="https://www.facebook.com/loabb">
         <FacebookIcon />
