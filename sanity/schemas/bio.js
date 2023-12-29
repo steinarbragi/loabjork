@@ -9,9 +9,29 @@ export default {
       title: 'Titill',
     },
     {
-      name: 'content',
+      name: 'description',
       type: 'text',
-      title: 'Texti',
+      title: 'Stutt Lýsing',
+    },
+    {
+      name: 'content_is',
+      type: 'array',
+      title: 'Content IS',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
+    },
+    {
+      name: 'content_en',
+      type: 'array',
+      title: 'Content EN',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'image',
