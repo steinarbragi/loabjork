@@ -63,6 +63,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'no-underscore-dangle': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
