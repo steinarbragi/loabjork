@@ -12,6 +12,10 @@
         "email": "Email",
         "message": "Message",
         "required": "This field is required",
-        "send": "Send message"
+        "send": "Send message",
+        "oops": "Oops, something went wrong.",
+        "tryagain": "Try again",
+        "goback": "Go back",
+        "success": "Success"
     }
 }

@@ -12,6 +12,10 @@
         "email": "Tölvupóstfang",
         "message": "Skilaboð",
         "required": "Fylltu út þennan reit",
-        "send": "Senda skilaboð"
+        "send": "Senda skilaboð",
+        "oops": "Úps, eitthvað fór úrskeiðis",
+        "tryagain": "Reyna aftur",
+        "goback": "Til baka",
+        "success": "Skilaboð send"
     }
 }
