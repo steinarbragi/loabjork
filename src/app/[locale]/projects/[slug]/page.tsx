@@ -10,7 +10,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   );
 
   return (
-    <main className="flex flex-col items-center justify-between p-24 lg:p-24 max-w-full">
+    <main className="p-10 lg:p-24 max-w-full">
       <Head>
         <title>{project.title}</title>
       </Head>
