@@ -15,12 +15,6 @@ export default async function Bio() {
       {projects.map(item => (
         <ProjectCard key={item._id} project={item} />
       ))}
-      {projects.map(item => (
-        <ProjectCard key={item._id} project={item} />
-      ))}
-      {projects.map(item => (
-        <ProjectCard key={item._id} project={item} />
-      ))}
     </main>
   );
 }
