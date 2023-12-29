@@ -11,10 +11,12 @@ export const metadata: Metadata = {
 export default async function Bio() {
   const projects = await client.fetch<SanityProject[]>(`*[_type == "project"]`);
   return (
-    <main className="flex flex-col lg:flex-row p-24 lg:space-x-4 space-y-10 lg:space-y-0">
-      {projects.map(item => (
-        <ProjectCard key={item._id} project={item} />
-      ))}
+    <main className="max-w-6xl content-center mx-auto px-10">
+      <div className="grid  sm:grid-cols-2 lg:grid-cols-3 pt-20 gap-5 mb-10">
+        {projects.map(item => (
+          <ProjectCard key={item._id} project={item} />
+        ))}
+      </div>
     </main>
   );
 }

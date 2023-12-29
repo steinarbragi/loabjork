@@ -13,10 +13,12 @@ export default async function Bio() {
     `*[_type == "publication"]`
   );
   return (
-    <main className="flex flex-col lg:flex-row p-24 lg:space-x-4 space-y-10 lg:space-y-0">
-      {projects.map(item => (
-        <PublicationCard key={item._id} publication={item} />
-      ))}
+    <main className="max-w-6xl content-center mx-auto px-10">
+      <div className="grid  sm:grid-cols-2 lg:grid-cols-3 pt-20 gap-5 mb-10">
+        {projects.map(item => (
+          <PublicationCard key={item._id} publication={item} />
+        ))}
+      </div>
     </main>
   );
 }
