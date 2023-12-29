@@ -1,8 +1,8 @@
+import { Link } from '@/utils/navigation';
 import { urlForImage } from '@/utils/sanity.client';
 import { SanityPublication } from '@/utils/sanity.types';
 import truncateWithEllipses from '@/utils/truncate';
 import Img from 'next/image';
-import Link from 'next/link';
 
 export default function PublicationCard({
   publication,

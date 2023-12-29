@@ -1,34 +1,36 @@
 'use client';
 
+import { Link } from '@/utils/navigation';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-
-const navItems = [
-  {
-    url: '/',
-    text: 'Lóa Björk',
-  },
-  {
-    url: '/projects',
-    text: 'Projects',
-  },
-  {
-    url: '/publications',
-    text: 'Publications',
-  },
-  {
-    url: '/bio',
-    text: 'Bio',
-  },
-  {
-    url: '/contact',
-    text: 'Contact',
-  },
-];
+import LocaleButton from './localeButton';
 
 export default function Navigation() {
+  const t = useTranslations('navigation');
+  const navItems = [
+    {
+      url: '/',
+      text: 'Lóa Björk',
+    },
+    {
+      url: '/projects',
+      text: t('projects'),
+    },
+    {
+      url: '/publications',
+      text: t('publications'),
+    },
+    {
+      url: '/bio',
+      text: t('bio'),
+    },
+    {
+      url: '/contact',
+      text: t('contact'),
+    },
+  ];
   const pathname = usePathname();
   return (
     <Disclosure
@@ -54,10 +56,13 @@ export default function Navigation() {
                       {item.text}
                     </Link>
                   ))}
+                  <LocaleButton />
                 </div>
               </div>
               <div className="-mr-2 flex items-center sm:hidden">
                 {/* Mobile menu button */}
+                <LocaleButton />
+
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
@@ -70,7 +75,6 @@ export default function Navigation() {
               </div>
             </div>
           </div>
-
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-3 pt-2">
               {navItems.map(item => (
