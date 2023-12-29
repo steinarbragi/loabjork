@@ -1,34 +1,35 @@
 'use client';
 
+import { Link } from '@/utils/navigation';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
-const navItems = [
-  {
-    url: '/',
-    text: 'Lóa Björk',
-  },
-  {
-    url: '/projects',
-    text: 'Projects',
-  },
-  {
-    url: '/publications',
-    text: 'Publications',
-  },
-  {
-    url: '/bio',
-    text: 'Bio',
-  },
-  {
-    url: '/contact',
-    text: 'Contact',
-  },
-];
-
 export default function Navigation() {
+  const t = useTranslations('navigation');
+  const navItems = [
+    {
+      url: '/',
+      text: 'Lóa Björk',
+    },
+    {
+      url: '/projects',
+      text: t('projects'),
+    },
+    {
+      url: '/publications',
+      text: t('publications'),
+    },
+    {
+      url: '/bio',
+      text: t('bio'),
+    },
+    {
+      url: '/contact',
+      text: t('contact'),
+    },
+  ];
   const pathname = usePathname();
   return (
     <Disclosure
