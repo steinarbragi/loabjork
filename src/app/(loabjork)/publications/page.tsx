@@ -1,16 +1,22 @@
+import PublicationCard from '@/components/publicationCard';
+import { client } from '@/utils/sanity.client';
+import { SanityPublication } from '@/utils/sanity.types';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Publications | Lóa Björk',
+  title: 'Bio | Lóa Björk',
   description: 'Lóa Björk Bragadóttir',
 };
 
-export default function Publications() {
+export default async function Bio() {
+  const projects = await client.fetch<SanityPublication[]>(
+    `*[_type == "publication"]`
+  );
   return (
-    <main className="flex flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex">
-        Publications
-      </div>
+    <main className="flex flex-col lg:flex-row p-24 lg:space-x-4 space-y-10 lg:space-y-0">
+      {projects.map(item => (
+        <PublicationCard key={item._id} publication={item} />
+      ))}
     </main>
   );
 }
