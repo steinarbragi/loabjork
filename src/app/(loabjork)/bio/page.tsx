@@ -1,18 +1,11 @@
 import { client, urlForImage } from '@/utils/sanity.client';
-import { SanityImageSource } from '@sanity/asset-utils';
+import { SanityBio } from '@/utils/sanity.types';
 import { Metadata } from 'next';
 import Img from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Bio | Lóa Björk',
   description: 'Lóa Björk Bragadóttir',
-};
-
-type SanityBio = {
-  _id: string;
-  title?: string;
-  content?: string;
-  image: SanityImageSource;
 };
 
 export default async function Bio() {
