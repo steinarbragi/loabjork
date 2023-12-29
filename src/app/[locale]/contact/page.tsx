@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
