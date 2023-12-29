@@ -1,13 +1,8 @@
 import { client, urlForImage } from '@/utils/sanity.client';
 import { SanityPublication } from '@/utils/sanity.types';
-import { Metadata } from 'next';
+import truncateWithEllipses from '@/utils/truncate';
 import Image from 'next/image';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'Publication | Lóa Björk',
-  description: 'Lóa Björk Bragadóttir',
-};
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const publication = await client.fetch<SanityPublication>(
@@ -46,4 +41,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </div>
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const publication = await client.fetch<SanityPublication>(
+    `*[_type == "publication" && slug.current == '${params.slug}'][0]`
+  );
+  return {
+    title: `${publication.title} | Lóa Björk`,
+    description: truncateWithEllipses(publication.description || '', 200),
+  };
 }
