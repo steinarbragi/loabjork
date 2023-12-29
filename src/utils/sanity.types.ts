@@ -12,6 +12,19 @@ export type SanityProject = {
   };
 };
 
+export type SanityPublication = {
+  _id: string;
+  title?: string;
+  description?: string;
+  image?: SanityImageSource;
+  dagsetning?: string;
+  link?: string;
+  slug?: {
+    current: string;
+    _type: string;
+  };
+};
+
 export type SanityBio = {
   _id: string;
   title?: string;
