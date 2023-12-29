@@ -26,7 +26,27 @@ export default {
     {
       name: 'description',
       type: 'text',
-      title: 'Lýsing',
+      title: 'Stutt Lýsing',
+    },
+    {
+      name: 'content_is',
+      type: 'array',
+      title: 'Content IS',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
+    },
+    {
+      name: 'content_en',
+      type: 'array',
+      title: 'Content EN',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'link',

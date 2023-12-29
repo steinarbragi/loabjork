@@ -1,10 +1,15 @@
 import { client, urlForImage } from '@/utils/sanity.client';
 import { SanityProject } from '@/utils/sanity.types';
 import truncateWithEllipses from '@/utils/truncate';
+import { PortableText } from '@portabletext/react';
 import Head from 'next/head';
 import Image from 'next/image';
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: { slug: string; locale: 'is' | 'en' };
+}) {
   const project = await client.fetch<SanityProject>(
     `*[_type == "project" && slug.current == '${params.slug}'][0]`
   );
@@ -16,7 +21,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </Head>
       <div className="mt-20">
         <h1 className="text-3xl mb-10">{project?.title}</h1>
-        <p className="mt-10">{project?.content}</p>
+        <p className="mt-10">{project?.description}</p>
         {project.video && (
           <div
             className="my-10 w-full max-w-full flex justify-center"
@@ -24,6 +29,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
             dangerouslySetInnerHTML={{ __html: project.video }}
           />
         )}
+        <p className="mt-10 max-w-lg">
+          <PortableText
+            value={project[`content_${params.locale}`] || { _type: 'null' }}
+          />
+        </p>
         <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-10 lg:space-y-0">
           {project?.images?.map(item => (
             <Image
@@ -57,6 +67,6 @@ export async function generateMetadata({
   );
   return {
     title: `${project.title} | Lóa Björk`,
-    description: truncateWithEllipses(project.content || '', 200),
+    description: truncateWithEllipses(project.description || '', 200),
   };
 }

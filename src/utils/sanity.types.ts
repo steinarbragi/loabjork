@@ -1,10 +1,13 @@
 import { SanityImageSource } from '@sanity/asset-utils/dist/types';
+import { TypedObject } from 'sanity';
 
 export type SanityProject = {
   _id: string;
   title?: string;
-  content?: string;
+  description?: string;
   images?: SanityImageSource[];
+  content_is?: TypedObject;
+  content_en?: TypedObject;
   video?: string;
   slug?: {
     current: string;
@@ -17,6 +20,8 @@ export type SanityPublication = {
   title?: string;
   description?: string;
   image?: SanityImageSource;
+  content_is?: TypedObject;
+  content_en?: TypedObject;
   dagsetning?: string;
   link?: string;
   slug?: {

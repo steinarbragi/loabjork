@@ -3,8 +3,13 @@ import { SanityPublication } from '@/utils/sanity.types';
 import truncateWithEllipses from '@/utils/truncate';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PortableText } from '@portabletext/react';
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: { slug: string; locale: 'is' | 'en' };
+}) {
   const publication = await client.fetch<SanityPublication>(
     `*[_type == "publication" && slug.current == '${params.slug}'][0]`
   );
@@ -38,6 +43,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </Link>
         )}
         <p className="mt-10 max-w-lg">{publication?.description}</p>
+        <p className="mt-10 max-w-lg">
+          <PortableText
+            value={publication[`content_${params.locale}`] || { _type: 'null' }}
+          />
+        </p>
       </div>
     </main>
   );
