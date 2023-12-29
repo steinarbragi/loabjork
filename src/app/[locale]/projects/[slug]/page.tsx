@@ -31,7 +31,7 @@ export default async function Page({
         )}
         <p className="mt-10 max-w-lg">
           <PortableText
-            value={project[`content_${params.locale}`] || { _type: 'null' }}
+            value={project[`content_${params.locale}`] || { _type: 'text' }}
           />
         </p>
         <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-10 lg:space-y-0">

@@ -45,7 +45,7 @@ export default async function Page({
         <p className="mt-10 max-w-lg">{publication?.description}</p>
         <p className="mt-10 max-w-lg">
           <PortableText
-            value={publication[`content_${params.locale}`] || { _type: 'null' }}
+            value={publication[`content_${params.locale}`] || { _type: 'text' }}
           />
         </p>
       </div>

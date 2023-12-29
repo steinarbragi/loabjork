@@ -33,6 +33,8 @@ export type SanityPublication = {
 export type SanityBio = {
   _id: string;
   title?: string;
-  content?: string;
+  description?: string;
+  content_is?: TypedObject;
+  content_en?: TypedObject;
   image: SanityImageSource;
 };
