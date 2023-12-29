@@ -10,8 +10,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
   );
 
   return (
-    <main className="flex flex-col items-center justify-between p-24">
-      <div>
+    <main className="flex flex-col items-center justify-between p-5 lg:p-24 max-w-full">
+      <div className="mt-20">
         <h1 className="text-3xl mb-10">{publication?.title}</h1>
         {publication.image && (
           <Image
@@ -29,7 +29,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               .quality(20)
               .url()}
             alt="Lóa Björk Bragadóttir"
-            className="block max-w-lg mb-10"
+            className="block max-w-full mb-10"
           />
         )}
         {publication.link && (
