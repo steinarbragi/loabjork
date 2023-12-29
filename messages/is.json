@@ -6,6 +6,12 @@
         "contact": "Hafa samband"
     },
     "contact": {
-        "contact": "Hafa samband"
+        "contact": "Hafa samband",
+        "name": "Nafn",
+        "phone": "Símanúmer",
+        "email": "Tölvupóstfang",
+        "message": "Skilaboð",
+        "required": "Fylltu út þennan reit",
+        "send": "Senda skilaboð"
     }
 }

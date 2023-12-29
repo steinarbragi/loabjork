@@ -4,15 +4,18 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from '@heroicons/react/24/outline';
-import { useTranslations } from 'next-intl';
-
-export const metadata: Metadata = {
-  title: 'Contact | Lóa Björk',
-  description: 'Lóa Björk Bragadóttir',
-};
+import pick from 'lodash/pick';
+import {
+  useTranslations,
+  useMessages,
+  NextIntlClientProvider,
+} from 'next-intl';
+import ContactForm from '@/components/contactForm';
 
 export default function Contact() {
   const t = useTranslations('contact');
+  const messages = useMessages();
+
   return (
     <main>
       <div className="relative z-0">
@@ -76,9 +79,22 @@ export default function Contact() {
               </dl>
             </div>
           </div>
-          {/* <ContactForm />  */}
+          <NextIntlClientProvider messages={pick(messages, 'contact')}>
+            <ContactForm />
+          </NextIntlClientProvider>
         </div>
       </div>
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return {
+    title: `${params.locale === 'is' ? 'Hafa Samband' : 'Contact'} | Lóa Björk`,
+    description: 'Lóa Björk Bragadóttir',
+  };
 }

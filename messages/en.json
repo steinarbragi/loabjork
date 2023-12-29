@@ -6,6 +6,12 @@
         "contact": "Contact"
     },
     "contact": {
-        "contact": "Contact"
+        "contact": "Contact",
+        "name": "Name",
+        "phone": "Phone number",
+        "email": "Email",
+        "message": "Message",
+        "required": "This field is required",
+        "send": "Send message"
     }
 }
