@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: { project: SanityProject }) {
         <h2 className="text-2xl mb-10">{project.title}</h2>
         <p className="mt-10">
           {' '}
-          {truncateWithEllipses(project.content || '', 300)}
+          {truncateWithEllipses(project.description || '', 300)}
         </p>
       </div>
     </Link>
